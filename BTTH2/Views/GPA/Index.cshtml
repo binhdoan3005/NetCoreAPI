@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Tính điểm GPA";
+}
+
+<h2>Tính điểm GPA</h2>
+<form method="post" asp-action="CalculateGPA">
+    <label>Điểm A:</label>
+    <input type="number" step="0.1" name="scoreA" required /><br />
+    <label>Điểm B:</label>
+    <input type="number" step="0.1" name="scoreB" required /><br />
+    <label>Điểm C:</label>
+    <input type="number" step="0.1" name="scoreC" required /><br />
+    <button type="submit">Tính GPA</button>
+</form>
+
+@if (ViewBag.FinalGPA != null)
+{
+    <h3>Điểm thành phần:</h3>
+    <p>Điểm A: @ViewBag.ScoreA</p>
+    <p>Điểm B: @ViewBag.ScoreB</p>
+    <p>Điểm C: @ViewBag.ScoreC</p>
+    <h3>Điểm GPA cuối cùng: @ViewBag.FinalGPA</h3>
+}

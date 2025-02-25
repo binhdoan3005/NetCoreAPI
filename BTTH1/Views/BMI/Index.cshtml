@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Tính chỉ số BMI";
+}
+
+<h2>Tính chỉ số BMI</h2>
+
+<form method="post">
+    <label for="weight">Cân nặng (kg):</label>
+    <input type="number" step="0.1" id="weight" name="weight" required /><br><br>
+
+    <label for="height">Chiều cao (m):</label>
+    <input type="number" step="0.01" id="height" name="height" required /><br><br>
+
+    <button type="submit">Tính BMI</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <p><strong>@ViewBag.Result</strong></p>
+}
