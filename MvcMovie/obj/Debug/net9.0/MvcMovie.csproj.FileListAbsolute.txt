@@ -364,3 +364,17 @@ D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\MvcMovie.runtimeconfig.json
 D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\MvcMovie.pdb
 D:\Net_Core_API\MvcMovie\obj\Debug\net9.0\MvcMovie.genruntimeconfig.cache
 D:\Net_Core_API\MvcMovie\obj\Debug\net9.0\ref\MvcMovie.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\EPPlus.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\EPPlus.Interfaces.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Security.Cryptography.Pkcs.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Security.Cryptography.Xml.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Text.Encoding.CodePages.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
+D:\Net_Core_API\MvcMovie\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Text.Encoding.CodePages.dll
