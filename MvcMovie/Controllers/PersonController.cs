@@ -4,6 +4,10 @@ using MvcMovie.Data;
 using MvcMovie.Models;
 using System.Threading.Tasks;
 using MvcMovie.Models.Process;
+using OfficeOpenXml;
+using X.PagedList;
+using X.PagedList.Extensions;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MvcMovie.Controllers
 {
@@ -18,13 +22,29 @@ namespace MvcMovie.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page, int? PageSize)
         {
-            if (_context.Person == null)
+            //kiem tra danh sach trong
+             if (_context.Person == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Person' is null.");
             }
-            var model = await _context.Person.ToListAsync();
+
+            //pageSize
+            ViewBag.PageSize = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value="3", Text= "3" },
+                new SelectListItem() { Value="5", Text= "5" },
+                new SelectListItem() { Value="10", Text= "10" },
+                new SelectListItem() { Value="15", Text= "15" },
+                new SelectListItem() { Value="25", Text= "25" },
+                new SelectListItem() { Value="50", Text= "50" },
+            };
+
+            int pagesize = (PageSize ?? 3);
+            ViewBag.psize = pagesize;
+
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, pagesize);
             return View(model);
         }
 
@@ -186,6 +206,35 @@ namespace MvcMovie.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult Download()
+        {
+            // Name the file when downloading
+            var fileName = "YourFileName" + ".xlsx";
+
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+
+                // add some text to cell A1, B1, C1
+                worksheet.Cells["A1"].Value = "PersonID";
+                worksheet.Cells["B1"].Value = "FullName";
+                worksheet.Cells["C1"].Value = "Address";
+                worksheet.Cells["D1"].Value = "Gender";
+
+                // get all Person
+                var personList = _context.Person.ToList();
+
+                // fill data to worksheet starting from A2
+                worksheet.Cells["A2"].LoadFromCollection(personList);
+
+                // download file
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File(stream,
+                    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    fileName);
+            }
         }
 
     }
