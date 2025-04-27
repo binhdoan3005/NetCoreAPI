@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj": {}
+    "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj": {}
   },
   "projects": {
-    "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj": {
+    "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
+        "projectUniqueName": "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
+        "projectPath": "D:\\NetCoreAPI\\MvcMovie\\MvcMovie.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Net_Core_API\\MvcMovie\\obj\\",
+        "outputPath": "D:\\NetCoreAPI\\MvcMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,11 +50,19 @@
               "target": "Package",
               "version": "[5.9.0, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SQLite": {
               "target": "Package",

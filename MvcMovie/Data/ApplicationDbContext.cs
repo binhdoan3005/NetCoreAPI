@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
 using MvcMovie;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MvcMovie.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
@@ -15,6 +16,8 @@ namespace MvcMovie.Data
         public DbSet<DaiLy> DaiLy { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<HeThongPhanPhoi>()
                 .HasMany(htpp => htpp.DaiLys)
                 .WithOne(dl => dl.HeThongPhanPhoi)
